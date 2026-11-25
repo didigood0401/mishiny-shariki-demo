@@ -110,13 +110,11 @@ ABOUT = """<div class="prose">
 <p>Ваш праздник начинается здесь 🎈</p>
 </div>"""
 
-OPT = """<div class="grid-3">
-<div class="tile"><div class="ico">🤝</div><h3>Кто наши клиенты</h3><p>Магазины детских товаров и товаров для праздника, аэродизайнеры и оформители, детские сады и школы.</p></div>
-<div class="tile"><div class="ico">📄</div><h3>Документы и качество</h3><p>Полный пакет документов, включая сертификаты на продукцию. Качество соответствует требованиям законодательства.</p></div>
-<div class="tile"><div class="ico">💡</div><h3>Открыты к новым идеям</h3><p>Если у вас есть запрос на новый товар — расскажите, и мы создадим продукт, который вам нужен.</p></div>
+OPT = """<div class="prose">
+<p>Закупайте нашу продукцию оптом напрямую у бренда «Мишины Шарики». Воздушные шары, наборы для фотозон, декор и товары для сервировки отгружаем с собственного склада. Мы предлагаем оптовые цены без наценок посредников и предоставляем полный пакет необходимых документов.</p>
 </div>
 <section class="sec" style="padding-bottom:0"><div class="form-card" style="max-width:980px;margin:0 auto">
-<h2 style="text-align:center">Обратная связь</h2><p class="sub" style="text-align:center">Оставьте контакты — менеджер пришлёт условия и прайс для вашего формата.</p>
+<h2 style="text-align:center">Обратная связь</h2><p class="sub" style="text-align:center">Доступ к оптовому каталогу предоставляется верифицированным партнёрам. Для верификации заполните, пожалуйста, форму обратной связи ниже и дождитесь звонка нашего менеджера.</p>
 <form onsubmit="event.preventDefault();this.querySelector('button').textContent='В демо форма не отправляется'">
 <div class="fields"><div><label for="n">Имя</label><input id="n" required></div><div><label for="c">Компания</label><input id="c"></div>
 <div><label for="p">Телефон</label><input id="p" type="tel" required></div><div><label for="e">E-mail</label><input id="e" type="email"></div>
@@ -139,7 +137,7 @@ VID = '<div class="vgrid">' + "".join(card(*v) for v in VIDEOS) + "".join(soon(s
 pages = {
     "index.html": index(),
     "o-kompanii.html": inner("o-kompanii.html", "О компании", "«Мишины Шарики» — российский бренд товаров для праздника. Мы создаём готовые наборы воздушных шаров и фотозон, подбираем декор и сервировку. С нашими товарами вы можете стильно оформить и праздник дома, и большое торжество.", ABOUT),
-    "optovym-klientam.html": inner("optovym-klientam.html", "Оптовым клиентам", "Работаем напрямую, без посредников и дистрибуции — поэтому предлагаем лучшие цены и стабильное наличие товара.", OPT),
+    "optovym-klientam.html": inner("optovym-klientam.html", "Оптовым клиентам", "Продаёте много? У вас большое мероприятие?", OPT),
     "kontakty.html": inner("kontakty.html", "Контакты", "Ответим на вопросы о продукции, заказах и сотрудничестве.", CONT),
     "videoinstruktsii.html": inner("videoinstruktsii.html", "Видеоинструкции", "Все инструкции по воздушным шарам, гирляндам и фотозонам в одном месте. Новые будут появляться здесь, как только Вы опубликуете их в блоге.", VID),
 }
