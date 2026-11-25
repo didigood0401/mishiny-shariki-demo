@@ -114,7 +114,7 @@ OPT = """<div class="prose">
 <p>Закупайте нашу продукцию оптом напрямую у бренда «Мишины Шарики». Воздушные шары, наборы для фотозон, декор и товары для сервировки отгружаем с собственного склада. Мы предлагаем оптовые цены без наценок посредников и предоставляем полный пакет необходимых документов.</p>
 </div>
 <section class="sec" style="padding-bottom:0"><div class="form-card" style="max-width:980px;margin:0 auto">
-<h2 style="text-align:center">Обратная связь</h2><p class="sub" style="text-align:center">Доступ к оптовому каталогу предоставляется верифицированным партнёрам. Для верификации заполните, пожалуйста, форму обратной связи ниже и дождитесь звонка нашего менеджера.</p>
+<h2 style="text-align:center">Обратная связь</h2><p class="sub">Доступ к оптовому каталогу предоставляется верифицированным партнёрам. Для верификации заполните, пожалуйста, форму обратной связи ниже и дождитесь звонка нашего менеджера.</p>
 <form onsubmit="event.preventDefault();this.querySelector('button').textContent='В демо форма не отправляется'">
 <div class="fields"><div><label for="n">Имя</label><input id="n" required></div><div><label for="c">Компания</label><input id="c"></div>
 <div><label for="p">Телефон</label><input id="p" type="tel" required></div><div><label for="e">E-mail</label><input id="e" type="email"></div>

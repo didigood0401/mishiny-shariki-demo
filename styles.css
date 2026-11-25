@@ -225,7 +225,7 @@ textarea{min-height:110px;resize:vertical}
 .card.soon{border-style:dashed}
 
 /* внутренние страницы: одна центральная ось (22.11) */
-.prose{max-width:860px;margin:0 auto;text-align:center}
+.prose{margin:0 auto;text-align:center}
 .prose h2{margin-top:1.4em}
 .page-head{max-width:1040px;margin:0 auto}
 .grid-3,.contacts,.split{max-width:1040px;margin-left:auto;margin-right:auto}
@@ -249,3 +249,21 @@ h1,h2{line-height:1.1}
 
 .prose a.about-contact{color:#1545b0;text-decoration:underline;text-underline-offset:.18em}
 .prose h3{margin:1.2em 0 .3em}
+
+
+.page-head .lead,
+.prose {
+  max-width: 48rem;
+}
+
+.prose p,
+.page-head .lead,
+.hero-content p,
+.sec-head p,
+.band p,
+.form-card .sub {
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
