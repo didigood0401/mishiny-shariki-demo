@@ -267,3 +267,14 @@ h1,h2{line-height:1.1}
   hyphens: auto;
   overflow-wrap: break-word;
 }
+
+.contact-details{margin-top:24px}
+.contact-directory h2,.contact-details h2{font-size:clamp(20px,2vw,26px)}
+.contact-directory .tile a,.contact-details .tile a{color:var(--violet);text-decoration:underline;text-underline-offset:.18em;overflow-wrap:anywhere}
+.contact-details .tile p+a{display:inline-block;margin-top:.8em}
+.social-links{display:flex;flex-wrap:wrap;gap:.6em 1.2em;justify-content:center;padding:0;list-style:none}
+
+.hero-brand{display:inline-flex;padding:clamp(12px,1.6vw,22px) clamp(20px,3vw,40px);margin:0 auto 1rem;background:var(--violet);border-radius:24px}
+.hero-brand img{width:clamp(170px,21vw,310px);height:auto}
+.hero-content h1{font-size:clamp(30px,4vw,57px)}
+.hero-content p,.vid-panel .sec-head p,.band p{font-weight:700}

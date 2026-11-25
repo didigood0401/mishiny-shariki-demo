@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """Сборка демо «Мишины шарики» v3 (правки Александры 22.11). Запуск: python3 build.py"""
 from pathlib import Path
+from urllib.parse import quote
 OUT = Path(__file__).parent
 A = "https://cdn.insales-shop.ru/assets/1/2761/11569865/1794991589/"
-LOGO = "https://cdn.insales-shop.ru/files/1/7526/40328550/original/logo_%D0%9B%D0%BE%D0%B3%D0%BE_3%D0%BA4.svg"
+LOGO = "mishiny-shariki.svg"
 WB = "https://www.wildberries.ru/brands/mishiny-shariki"
 SITE = "https://mshariki.ru"
 TEL, TEL_H = "+79258886000", "+7 925 888-60-00"
 MAIL = "info@mshariki.ru"
+
+MAX_CHANNEL = "https://max.ru/mishinishariki"
+VK_COMMUNITY = "https://vk.com/mishinishariki"
+WAREHOUSE = "РФ, Московская область, Ленинский городской округ, Каширское шоссе, 31-й километр, 235с6"
+MAP = "https://yandex.ru/maps/?text=" + quote(WAREHOUSE)
 
 NAV = [("o-kompanii.html", "О компании"), ("optovym-klientam.html", "Оптовым клиентам"), ("kontakty.html", "Контакты")]
 
@@ -35,7 +41,7 @@ FOOT = f"""</main><footer class="ftr"><div class="wrap">
  <div><h4>Компания</h4><ul><li><a href="o-kompanii.html">О компании</a></li><li><a href="optovym-klientam.html">Оптовым клиентам</a></li><li><a href="kontakty.html">Контакты</a></li><li><a href="videoinstruktsii.html">Видеоинструкции</a></li></ul></div>
  <div><h4>Покупателям</h4><ul><li><a href="{SITE}/page/oferta">Публичная оферта</a></li><li><a href="{SITE}/page/agreement">Пользовательское соглашение</a></li><li><a href="{SITE}/page/exchange">Обмен и возврат</a></li><li><a href="{SITE}/page/privacy-policy">Политика конфиденциальности</a></li></ul></div>
  <div><h4>Связаться</h4><ul><li><a class="big" href="tel:{TEL}">{TEL_H}</a></li><li><a href="mailto:{MAIL}">{MAIL}</a></li></ul>
-  <div class="social"><a href="#" aria-label="MAX"><img src="https://cdn.insales-shop.ru/files/1/5425/138122545/original/MAX-24x24.png" alt=""></a></div></div>
+  <div class="social"><a href="{VK_COMMUNITY}" aria-label="Мишины Шарики во ВКонтакте"><b aria-hidden="true">ВК</b></a><a href="{MAX_CHANNEL}" aria-label="Канал Мишиных Шариков в MAX"><img src="https://cdn.insales-shop.ru/files/1/5425/138122545/original/MAX-24x24.png" alt=""></a></div></div>
 </div>
 <div class="ftr-bottom"><span>ООО «Гармония» · ИНН 9725002724 · ОГРН 1197746107140</span><span>© Мишины шарики, 2026</span></div>
 </div></footer>
@@ -68,7 +74,7 @@ def index():
     return head("Товары для праздника", "") + f"""
 <section class="hero"><div class="wrap"><div class="hero-card">
 <div class="circle circle1"></div><div class="circle circle2"></div>
-<div class="hero-content"><h1>«Мишины Шарики» — бренд товаров для праздника.</h1>
+<div class="hero-content"><div class="hero-brand"><img src="{LOGO}" alt="Мишины Шарики" width="125" height="51"></div><h1>Бренд товаров для праздника</h1>
 <p>В нашем каталоге — свежие идеи для домашнего дня рождения и большого торжества. Выберите свой стиль и соберите всё оформление в одной теме: от шаров и фотозоны до декора праздничного стола.</p>
 <div class="hero-cta"><a class="btn btn-main" href="{WB}" target="_blank" rel="noopener">Выбрать на Wildberries</a></div></div>
 <img class="slider-el slider-el-left" src="{A}balon-left.png" alt=""><img class="slider-el slider-el-right" src="{A}balon-right.png" alt=""><img class="slider-el slider-cake" src="{A}cake.png" alt="">
@@ -122,14 +128,20 @@ OPT = """<div class="prose">
 <label class="agree"><input type="checkbox" required> Согласен с обработкой персональных данных и политикой конфиденциальности</label>
 <div style="text-align:center"><button class="btn btn-main" type="submit">Отправить заявку</button></div></form></div></section>"""
 
-CONT = f"""<div class="contacts">
-<div class="tile"><div class="ico">📞</div><h3>Телефон</h3><a href="tel:{TEL}">{TEL_H}</a></div>
-<div class="tile"><div class="ico">✉️</div><h3>E-mail</h3><a href="mailto:{MAIL}">{MAIL}</a></div>
-<div class="tile"><div class="ico">🛍️</div><h3>Где купить</h3><a href="{WB}" target="_blank" rel="noopener">Wildberries</a></div>
+CONT = f"""<div class="contacts contact-directory">
+<div class="tile"><h2>Телефон</h2><a href="tel:{TEL}">{TEL_H}</a></div>
+<div class="tile"><h2>Электронная почта</h2><a href="mailto:{MAIL}">{MAIL}</a></div>
+<div class="tile"><h2>MAX</h2><a href="{MAX_CHANNEL}">Открыть канал бренда в MAX</a></div>
+<div class="tile"><h2>Где купить</h2><a href="{WB}">Открыть каталог на Wildberries</a></div>
+<div class="tile"><h2>Наши вакансии</h2><a href="https://hh.ru/employer/10332983">Смотреть вакансии на hh.ru</a></div>
+<div class="tile"><h2>Оптовым клиентам</h2><a href="optovym-klientam.html">Перейти на страницу оптовых закупок</a></div>
 </div>
-<div class="split" style="margin-top:24px">
-<div class="tile"><h3>Реквизиты</h3><div class="req">ООО «Гармония»<br>ИНН 9725002724 · КПП 772501001<br>ОГРН 1197746107140</div></div>
-<div class="tile"><h3>Оптовым клиентам</h3><p>Условия, прайс и документы — на странице для партнёров.</p><a class="btn btn-line" href="optovym-klientam.html" style="margin-top:12px">Условия для партнёров</a></div>
+<div class="split contact-details">
+<section class="tile"><h2>Адрес склада</h2><p>{WAREHOUSE}.</p><a href="{MAP}">Открыть в Яндекс Картах</a></section>
+<section class="tile"><h2>Вопросы по заказам на маркетплейсах</h2><p>Если вы оформили заказ на маркетплейсе, напишите в чат поддержки той площадки, где сделали заказ.</p></section>
+<section class="tile"><h2>Официальные социальные сети бренда</h2>
+<ul class="social-links"><li><a href="{VK_COMMUNITY}">ВКонтакте</a></li><li><a href="{MAX_CHANNEL}">MAX</a></li><li><a href="https://dzen.ru/mishinishariki">Дзен</a></li><li><a href="https://www.tiktok.com/@mishinishariki">TikTok</a></li><li><a href="https://ru.pinterest.com/mishinishariki/">Pinterest</a></li></ul></section>
+<section class="tile"><h2>Реквизиты</h2><p>ООО «Гармония»<br>ИНН 9725002724 · КПП 772501001<br>ОГРН 1197746107140</p></section>
 </div>"""
 
 VID = '<div class="vgrid">' + "".join(card(*v) for v in VIDEOS) + "".join(soon(s) for s in SOON) + "</div>"
@@ -138,7 +150,7 @@ pages = {
     "index.html": index(),
     "o-kompanii.html": inner("o-kompanii.html", "О компании", "«Мишины Шарики» — российский бренд товаров для праздника. Мы создаём готовые наборы воздушных шаров и фотозон, подбираем декор и сервировку. С нашими товарами вы можете стильно оформить и праздник дома, и большое торжество.", ABOUT),
     "optovym-klientam.html": inner("optovym-klientam.html", "Оптовым клиентам", "Продаёте много? У вас большое мероприятие?", OPT),
-    "kontakty.html": inner("kontakty.html", "Контакты", "Ответим на вопросы о продукции, заказах и сотрудничестве.", CONT),
+    "kontakty.html": inner("kontakty.html", "Контакты", "Ответим на вопросы о продукции и сотрудничестве.", CONT),
     "videoinstruktsii.html": inner("videoinstruktsii.html", "Видеоинструкции", "Все инструкции по воздушным шарам, гирляндам и фотозонам в одном месте. Новые будут появляться здесь, как только Вы опубликуете их в блоге.", VID),
 }
 for name, html in pages.items():
