@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Сборка демо «Мишины шарики» v3 (правки Александры 22.11). Запуск: python3 build.py"""
 from pathlib import Path
-from urllib.parse import quote
 OUT = Path(__file__).parent
 A = "https://cdn.insales-shop.ru/assets/1/2761/11569865/1794991589/"
 LOGO = "mishiny-shariki.svg"
@@ -13,7 +12,8 @@ MAIL = "info@mshariki.ru"
 MAX_CHANNEL = "https://max.ru/mishinishariki"
 VK_COMMUNITY = "https://vk.com/mishinishariki"
 WAREHOUSE = "РФ, Московская область, Ленинский городской округ, Каширское шоссе, 31-й километр, 235с6"
-MAP = "https://yandex.ru/maps/?text=" + quote(WAREHOUSE)
+MAP = "https://yandex.ru/navi/org/mishiny_shariki/218148518369?si=qc6xx1685ekte7j0r8a49wp5cr"
+MAX_CHAT = "https://max.ru/u/f9LHodD0cOLCOaXU0WAd0PNVzI9SR448RvfAEXOCIW4v3wh_Av6IUVL_Di0"
 
 NAV = [("o-kompanii.html", "О компании"), ("optovym-klientam.html", "Оптовым клиентам"), ("kontakty.html", "Контакты")]
 
@@ -131,9 +131,9 @@ OPT = """<div class="prose">
 CONT = f"""<div class="contacts contact-directory">
 <div class="tile"><h2>Телефон</h2><a href="tel:{TEL}">{TEL_H}</a></div>
 <div class="tile"><h2>Электронная почта</h2><a href="mailto:{MAIL}">{MAIL}</a></div>
-<div class="tile"><h2>MAX</h2><a href="{MAX_CHANNEL}">Открыть канал бренда в MAX</a></div>
+<div class="tile"><h2>MAX</h2><a href="{MAX_CHAT}">Написать нам в MAX</a></div>
 <div class="tile"><h2>Где купить</h2><a href="{WB}">Открыть каталог на Wildberries</a></div>
-<div class="tile"><h2>Наши вакансии</h2><a href="https://hh.ru/employer/10332983">Смотреть вакансии на hh.ru</a></div>
+<div class="tile"><h2>Наши вакансии</h2><a href="https://hh.ru/employer/10332983?hhtmFrom=vacancy&amp;tab=DESCRIPTION">Смотреть вакансии на hh.ru</a></div>
 <div class="tile"><h2>Оптовым клиентам</h2><a href="optovym-klientam.html">Перейти на страницу оптовых закупок</a></div>
 </div>
 <div class="split contact-details">
