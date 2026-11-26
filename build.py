@@ -74,7 +74,7 @@ def index():
     return head("Товары для праздника", "") + f"""
 <section class="hero"><div class="wrap"><div class="hero-card">
 <div class="circle circle1"></div><div class="circle circle2"></div>
-<div class="hero-content"><div class="hero-brand"><img src="{LOGO}" alt="Мишины Шарики" width="125" height="51"></div><h1>Бренд товаров для праздника</h1>
+<div class="hero-content"><div class="hero-brand"><img src="mishiny-shariki-dark.svg" alt="Мишины Шарики" width="125" height="51"></div><h1>Бренд товаров для праздника</h1>
 <p>В нашем каталоге — свежие идеи для домашнего дня рождения и большого торжества. Выберите свой стиль и соберите всё оформление в одной теме: от шаров и фотозоны до декора праздничного стола.</p>
 <div class="hero-cta"><a class="btn btn-main" href="{WB}" target="_blank" rel="noopener">Выбрать на Wildberries</a></div></div>
 <img class="slider-el slider-el-left" src="{A}balon-left.png" alt=""><img class="slider-el slider-el-right" src="{A}balon-right.png" alt=""><img class="slider-el slider-cake" src="{A}cake.png" alt="">
@@ -90,8 +90,9 @@ def index():
 """ + FOOT
 
 def inner(slug, title, lead, body):
+    content_class = "wrap brand-backdrop" if slug in {"o-kompanii.html", "kontakty.html"} else "wrap"
     return head(title, slug) + f"""
-<div class="wrap"><div class="crumbs"><a href="index.html">Главная</a> / {title}</div>
+<div class="{content_class}"><div class="crumbs"><a href="index.html">Главная</a> / {title}</div>
 <div class="page-head"><h1>{title}</h1><p class="lead">{lead}</p></div>
 {body}</div>""" + FOOT
 
@@ -128,21 +129,18 @@ OPT = """<div class="prose">
 <label class="agree"><input type="checkbox" required> Согласен с обработкой персональных данных и политикой конфиденциальности</label>
 <div style="text-align:center"><button class="btn btn-main" type="submit">Отправить заявку</button></div></form></div></section>"""
 
-CONT = f"""<div class="contacts contact-directory">
-<div class="tile"><h2>Телефон</h2><a href="tel:{TEL}">{TEL_H}</a></div>
-<div class="tile"><h2>Электронная почта</h2><a href="mailto:{MAIL}">{MAIL}</a></div>
-<div class="tile"><h2>MAX</h2><a href="{MAX_CHAT}">Написать нам в MAX</a></div>
-<div class="tile"><h2>Где купить</h2><a href="{WB}">Открыть каталог на Wildberries</a></div>
-<div class="tile"><h2>Наши вакансии</h2><a href="https://hh.ru/employer/10332983?hhtmFrom=vacancy&amp;tab=DESCRIPTION">Смотреть вакансии на hh.ru</a></div>
-<div class="tile"><h2>Оптовым клиентам</h2><a href="optovym-klientam.html">Перейти на страницу оптовых закупок</a></div>
-</div>
-<div class="split contact-details">
-<section class="tile"><h2>Адрес склада</h2><p>{WAREHOUSE}.</p><a href="{MAP}">Открыть в Яндекс Картах</a></section>
-<section class="tile"><h2>Вопросы по заказам на маркетплейсах</h2><p>Если вы оформили заказ на маркетплейсе, напишите в чат поддержки той площадки, где сделали заказ.</p></section>
-<section class="tile"><h2>Официальные социальные сети бренда</h2>
-<ul class="social-links"><li><a href="{VK_COMMUNITY}">ВКонтакте</a></li><li><a href="{MAX_CHANNEL}">MAX</a></li><li><a href="https://dzen.ru/mishinishariki">Дзен</a></li><li><a href="https://www.tiktok.com/@mishinishariki">TikTok</a></li><li><a href="https://ru.pinterest.com/mishinishariki/">Pinterest</a></li></ul></section>
-<section class="tile"><h2>Реквизиты</h2><p>ООО «Гармония»<br>ИНН 9725002724 · КПП 772501001<br>ОГРН 1197746107140</p></section>
-</div>"""
+CONT = f"""<dl class="contact-list">
+<dt>Телефон</dt><dd><a href="tel:{TEL}">{TEL_H}</a></dd>
+<dt>Электронная почта</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd>
+<dt>MAX</dt><dd><a href="{MAX_CHAT}">Написать нам в MAX</a></dd>
+<dt>Где купить</dt><dd><a href="{WB}">Открыть каталог на Wildberries</a></dd>
+<dt>Наши вакансии</dt><dd><a href="https://hh.ru/employer/10332983?hhtmFrom=vacancy&amp;tab=DESCRIPTION">Смотреть вакансии на hh.ru</a></dd>
+<dt>Оптовым клиентам</dt><dd><a href="optovym-klientam.html">Перейти на страницу оптовых закупок</a></dd>
+<dt>Адрес склада</dt><dd><p>{WAREHOUSE}.</p><a href="{MAP}">Открыть в Яндекс Картах</a></dd>
+<dt>Вопросы по заказам на маркетплейсах</dt><dd><p>Если вы оформили заказ на маркетплейсе, напишите в чат поддержки той площадки, где сделали заказ.</p></dd>
+<dt>Официальные социальные сети бренда</dt><dd><ul class="social-links"><li><a href="{VK_COMMUNITY}">ВКонтакте</a></li><li><a href="{MAX_CHANNEL}">MAX</a></li><li><a href="https://dzen.ru/mishinishariki">Дзен</a></li><li><a href="https://www.tiktok.com/@mishinishariki">TikTok</a></li><li><a href="https://ru.pinterest.com/mishinishariki/">Pinterest</a></li></ul></dd>
+<dt>Реквизиты</dt><dd><p>ООО «Гармония»<br>ИНН 9725002724 · КПП 772501001<br>ОГРН 1197746107140</p></dd>
+</dl>"""
 
 VID = '<div class="vgrid">' + "".join(card(*v) for v in VIDEOS) + "".join(soon(s) for s in SOON) + "</div>"
 
