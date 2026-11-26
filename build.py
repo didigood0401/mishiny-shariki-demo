@@ -18,13 +18,14 @@ MAX_CHAT = "https://max.ru/u/f9LHodD0cOLCOaXU0WAd0PNVzI9SR448RvfAEXOCIW4v3wh_Av6
 NAV = [("o-kompanii.html", "О компании"), ("optovym-klientam.html", "Оптовым клиентам"), ("kontakty.html", "Контакты")]
 
 def head(title, cur):
+    css_version = {"": "?v=brand-review", "kontakty.html": "?v=decor-hd", "o-kompanii.html": "?v=decor-hd"}.get(cur, "")
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == cur else ""}>{t}</a>' for h, t in NAV)
     return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — Мишины шарики</title><meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css{'?v=brand-review' if cur in ('', 'kontakty.html') else ''}"></head><body>
+<link rel="stylesheet" href="styles.css{css_version}"></head><body>
 <div class="demo-flag">Демо-макет редизайна для согласования · не опубликован</div>
 <header class="hdr" id="hdr"><div class="wrap">
 <a class="logo" href="index.html" aria-label="Мишины шарики — на главную"><img src="{LOGO}" alt="Мишины шарики"></a>
