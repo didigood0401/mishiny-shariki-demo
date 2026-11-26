@@ -269,14 +269,16 @@ h1,h2{line-height:1.1}
 }
 
 
-.contact-list{max-width:48rem;margin:0 auto;padding:0;color:var(--ink)}
-.contact-list dt{font:400 clamp(21px,2vw,26px)/1.25 "Baloo Cyrillic","Manrope",sans-serif;margin:1.25rem 0 .15rem}
-.contact-list dd{margin:0;overflow-wrap:anywhere}
-.contact-list dd p{margin:0}
-.contact-list a{color:var(--violet);text-underline-offset:.18em}
-.social-links{display:flex;flex-wrap:wrap;gap:.45rem 1.3rem;padding:0;margin:0;list-style:none}
+.contact-copy{max-width:48rem;margin:0 auto;color:var(--ink);overflow-wrap:anywhere}
+.contact-copy ul{padding-left:1.3em;margin:.5rem 0 1.5rem}
+.contact-copy li{padding-left:.12em;margin:.35em 0}
+.contact-copy li::marker{color:var(--violet)}
+.contact-copy strong::after{content:":"}
+.contact-copy h2{margin:1.4em 0 .45em;font-size:clamp(22px,2.4vw,29px)}
+.contact-copy p{margin:0}
+.contact-copy a{color:var(--violet);text-underline-offset:.18em}
 .hero-brand{display:inline-flex;margin:0 auto 1rem}
-.hero-brand img{width:clamp(170px,21vw,310px);height:auto}
+.hero-brand img{width:auto;height:clamp(135px,13vw,178px);max-width:100%}
 .hero-content h1{font-size:clamp(30px,4vw,57px)}
 .hero-content p,.vid-panel .sec-head p,.band p{font-weight:700}
 .hero-content p{text-align:center;text-align-last:center;hyphens:manual}
